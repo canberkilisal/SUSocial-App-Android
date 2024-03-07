@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.example.firsttryapp.FragmentMain"
+        android:label="FragmentMain"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentNewsDetail"
+            app:destination="@id/fragmentNewsDetail" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentPostDetail"
+            app:destination="@id/fragmentPostDetail" />
+        <action
+            android:id="@+id/action_fragmentMain_to_listDataDetailFragment"
+            app:destination="@id/listDataDetailFragment" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentListUser"
+            app:destination="@id/fragmentListUser"
+            app:popUpTo="@id/fragmentMain" />
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentCreatePost"
+            app:destination="@id/fragmentCreatePost"
+            app:popUpTo="@id/fragmentMain" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listDataDetailFragment"
+        android:name="com.example.firsttryapp.FragmentUserDetail"
+        android:label="fragment_list_data_detail"
+        tools:layout="@layout/fragment_list_data_detail" />
+    <fragment
+        android:id="@+id/fragmentNewsDetail"
+        android:name="com.example.firsttryapp.FragmentNewsDetail"
+        android:label="fragment_news_detail"
+        tools:layout="@layout/fragment_news_detail" />
+    <fragment
+        android:id="@+id/fragmentPostDetail"
+        android:name="com.example.firsttryapp.FragmentPostDetail"
+        android:label="fragment_post_detail"
+        tools:layout="@layout/fragment_post_detail" >
+        <action
+            android:id="@+id/action_fragmentPostDetail_to_fragmentCreateComment"
+            app:destination="@id/fragmentCreateComment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.firsttryapp.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_fragmentMain"
+            app:destination="@id/fragmentMain" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.firsttryapp.FragmentSignUp"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/fragmentListUser"
+        android:name="com.example.firsttryapp.FragmentListUser"
+        android:label="fragment_list_data"
+        tools:layout="@layout/fragment_list_data" />
+    <fragment
+        android:id="@+id/fragmentCreatePost"
+        android:name="com.example.firsttryapp.FragmentCreatePost"
+        android:label="fragment_create_post"
+        tools:layout="@layout/fragment_create_post" />
+    <fragment
+        android:id="@+id/fragmentCreateComment"
+        android:name="com.example.firsttryapp.FragmentCreateComment"
+        android:label="FragmentCreateComment" />
+
+</navigation>
